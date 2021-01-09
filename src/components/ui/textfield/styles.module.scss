@@ -1,0 +1,8 @@
+@use "../../../global";
+@use "@material/textfield";
+
+@include textfield.core-styles;
+
+text-field {
+
+}

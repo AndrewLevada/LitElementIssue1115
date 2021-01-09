@@ -1,0 +1,102 @@
+@use "./global";
+
+$authFormGapSize: 28px;
+$containerMinWidth: 360px;
+$containerPercentWidth: 26%;
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: global.$backgroundColor;
+  height: 100%;
+}
+
+.window {
+  color: global.$primaryColor;
+  position: relative;
+  box-sizing: border-box;
+  border-radius: global.$defaultRadius;
+  background: global.$surfaceColor;
+  width: $containerPercentWidth;
+  min-width: $containerMinWidth;
+}
+
+.content {
+  padding-left: $authFormGapSize;
+  padding-right: $authFormGapSize;
+  padding-bottom: $authFormGapSize;
+  display: flex;
+  flex-flow: column;
+}
+
+.auth-form > label {
+  margin-bottom: $authFormGapSize;
+}
+
+.welcome-text {
+  font-weight: 400;
+  margin-top: 56px;
+  margin-bottom: 56px;
+  text-align: center;
+  font-size: 40px;
+  letter-spacing: 0;
+}
+
+.page-link {
+  text-align: center;
+  margin-top: $authFormGapSize;
+  margin-bottom: $authFormGapSize;
+  font-size: 14px;
+}
+
+.under-window {
+  border-radius: global.$defaultRadius;
+  background: global.$errorColor;
+  color: global.$onErrorColor;
+
+  width: $containerPercentWidth;
+  min-width: $containerMinWidth;
+  height: $authFormGapSize + 4px;
+  margin-top: $authFormGapSize;
+
+  display: flex;
+  align-items: center;
+
+  p {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.status-pad {
+  opacity: 0;
+}
+
+@media only screen and (max-device-width: 590px) {
+  .window {
+    width: 100%;
+    height: 100%;
+    border-radius: global.$defaultRadius global.$defaultRadius 0 0;
+    min-width: 0;
+  }
+
+  .content {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .welcome-text {
+    font-size: 10vw;
+    margin: auto;
+  }
+
+  .page-link {
+    font-size: 14px;
+    margin: auto;
+  }
+}

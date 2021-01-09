@@ -1,0 +1,11 @@
+@use "../../../global";
+@use "@material/button";
+
+@include button.core-styles;
+
+button- {
+  button {
+    width: inherit;
+    font-weight: bold !important;
+  }
+}

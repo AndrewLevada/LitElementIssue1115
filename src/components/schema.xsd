@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xhtml="http://www.w3.org/2002/08/xhtml/xhtml1-strict.xsd">
+    <!-- Importing XHTML namespace -->
+    <xs:import namespace="http://www.w3.org/1999/xhtml"
+               schemaLocation="http://www.w3.org/2002/08/xhtml/xhtml1-strict.xsd"/>
+
+    <xs:element name="button-">
+        <xs:complexType>
+            <xs:attributeGroup ref="xhtml:coreattrs"/>
+            <xs:attribute name="text" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="text-field">
+        <xs:complexType>
+            <xs:attributeGroup ref="xhtml:coreattrs"/>
+            <xs:attribute name="alias" type="xs:string" use="required"/>
+            <xs:attribute name="label" type="xs:string" use="required"/>
+            <xs:attribute name="type" type="xhtml:InputType" use="required"/>
+            <xs:attribute name="min-length" type="xs:integer"/>
+            <xs:attribute name="max-length" type="xs:integer"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

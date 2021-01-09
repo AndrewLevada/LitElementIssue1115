@@ -1,0 +1,194 @@
+$primaryColor: #2A74E3;
+$secondaryColor: #2AE374;
+$backgroundColor: #FAFAFA;
+$surfaceColor: #FFFFFF;
+$errorColor: #F44336;
+$onPrimaryColor: #FFFFFF;
+$onSecondaryColor: #000000;
+$onBackgroundColor: #000000;
+$onSurfaceColor: #000000;
+$onErrorColor: #FFFFFF;
+$dividerColor: rgba(0, 0, 0, 0.12);
+$defaultRadius: 20px;
+$defaultSmallRadius: 8px;
+
+$maxWidthTablet: 1024px;
+$maxWidthMobile: 768px;
+
+@use "@material/theme" with (
+  $primary: $primaryColor,
+  $secondary: $secondaryColor,
+  $on-primary: #fff,
+  $on-secondary: #000,
+  $background: #fff,
+);
+
+@use "@material/shape" with (
+  $small-component-radius: $defaultSmallRadius,
+  $medium-component-radius: $defaultRadius,
+  $large-component-radius: $defaultRadius,
+);
+
+@use "material-components-web";
+@use "@material/fab";
+@use "@material/dialog";
+@use "@material/drawer";
+@use "@material/list";
+
+@include fab.core-styles;
+@include dialog.core-styles;
+@include drawer.core-styles;
+@include list.core-styles;
+
+@import "./reset";
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,300,500,600);
+
+@mixin inherit-size() {
+  width: inherit;
+  height: inherit;
+}
+
+@mixin not-selectable() {
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+}
+
+@mixin antialias() {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+  text-rendering: optimizeLegibility;
+}
+
+@mixin default-border() {
+  border: 1px solid $dividerColor;
+}
+
+@mixin default-border-top() {
+  border-top: 1px solid $dividerColor;
+}
+
+@mixin default-border-right() {
+  border-right: 1px solid $dividerColor;
+}
+
+@mixin default-border-bottom() {
+  border-bottom: 1px solid $dividerColor;
+}
+
+@mixin default-border-left() {
+  border-left: 1px solid $dividerColor;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  background-color: $backgroundColor;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+textarea,
+ul,
+a,
+span {
+  font-family: Montserrat, sans-serif;
+  @include antialias();
+}
+
+i {
+  @include not-selectable();
+  @include antialias();
+}
+
+h1 {
+  font-size: 48px;
+  line-height: 62px;
+  font-weight: bold;
+
+  @media screen and (max-width: $maxWidthMobile) {
+    font-size: 42px;
+    line-height: 58px;
+  }
+}
+
+h2 {
+  font-size: 38px;
+  line-height: 52px;
+  font-weight: bold;
+
+  @media screen and (max-width: $maxWidthMobile) {
+    font-size: 34px;
+    line-height: 48px;
+  }
+}
+
+p {
+  font-size: 20px;
+  line-height: 30px;
+
+  @media screen and (max-width: $maxWidthMobile) {
+    font-size: 18px;
+  }
+}
+
+.full-width {
+  width: 100%;
+}
+
+.small-extra-text {
+  color: #AAAAAA;
+  font-size: 14px;
+}
+
+.margin-bottom-4 {
+  margin-bottom: 4px;
+}
+
+.margin-bottom-8 {
+  margin-bottom: 8px;
+}
+
+.margin-bottom-16 {
+  margin-bottom: 16px;
+}
+
+.margin-bottom-24 {
+  margin-bottom: 24px;
+}
+
+.margin-bottom-32 {
+  margin-bottom: 32px;
+}
+
+.margin-top-4 {
+  margin-top: 4px;
+}
+
+.margin-top-8 {
+  margin-top: 8px;
+}
+
+.margin-top-16 {
+  margin-top: 16px;
+}
+
+.margin-top-24 {
+  margin-top: 24px;
+}
+
+.margin-top-32 {
+  margin-top: 32px;
+}
